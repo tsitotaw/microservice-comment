@@ -21,7 +21,7 @@ public class CommentService implements ICommentService{
     @Override
     public PostComment getCommentById(Long commentId) {
         Comment comment = commentRepository.findById(commentId).get();
-        Post post = restTemplate.getForObject("http://POST-SERVICE/posts/" + comment.getId(), Post.class);
+        Post post = restTemplate.getForObject("lb://API-GATEWAY/posts/" + comment.getId(), Post.class);
 
         PostComment pcdto  = new PostComment();
         pcdto.setComment(comment);

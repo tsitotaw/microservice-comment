@@ -20,12 +20,12 @@ public class CommentController {
         return this.commentService.getCommentById(commentId);
     }
 
-    @GetMapping("")
+    @GetMapping("/")
     public List<Comment> getAllComments(){
         return this.commentService.getAll();
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     public Comment saveComment(@RequestBody Comment comment){
         return this.commentService.saveComment(comment);
     }
